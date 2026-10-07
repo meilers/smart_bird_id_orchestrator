@@ -88,6 +88,8 @@ first for the workflow and standing rules.
    Done: iOS r648 = 434a43b018 (branch, unpushed at report); Android r641 = 97735851a + proofs a46aafd8b (pushed).
    Android r642 = currency-style fix + All-In-One text (batch 28). Owner's Pixel now has the NA DEBUG build (reinstall
    from Play). Next: owner device pass on both, then merge go.
+   r642 done: d079947be + proofs 4b9545ad6 (pushed). Both branches feature-complete, pushed, unmerged:
+   iOS 71d8c65cbe, Android 4b9545ad6. Waiting: owner device pass, Firebase promo text edit, version numbers.
 1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.

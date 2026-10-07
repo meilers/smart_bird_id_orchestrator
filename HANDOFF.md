@@ -22,10 +22,10 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r646 | **r647** |
+| iOS request | r647 | **r648** |
 | Android request | r640 | **r641** |
 | Cloud request | r616 (cancelled) | r617 |
-| Translation batch | 26 | **27** |
+| Translation batch | 27 | **28** |
 
 ## Releases
 
@@ -80,6 +80,9 @@ first for the workflow and standing rules.
    backup scope planned; gates untouched). Audit notes: free users lack a real Firebase identity, iOS `createUser`
    `user.reset` can wipe local sightings, sync also writes `sharedSightings` when toShare. Android: no Family product, carousel retired, Restore/Redeem/Important Info added. Pending owner:
    Android 1-sighting/24h free cap (`canSubmitIdentification`).
+   2026-10-07 reports: iOS db4eb7872e (unpushed branch), Android e50cb846e+f27201d81 (pushed). iOS r647 = fixes
+   (spinner overlap, icon balance, close X, dismiss after purchase, restore feedback, hasProFamily check, typo).
+   Android r641 waits on owner: dark vs light-only, hero photo, 24h cap, MEMBER50 Store-tab offer (both platforms).
 1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.

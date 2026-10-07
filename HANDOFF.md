@@ -22,10 +22,10 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r648 | **r649** |
-| Android request | r642 | **r643** |
+| iOS request | r649 | **r650** |
+| Android request | r643 | **r644** |
 | Cloud request | r616 (cancelled) | r617 |
-| Translation batch | 28 | **29** |
+| Translation batch | 29 | **30** |
 
 ## Releases
 
@@ -90,6 +90,12 @@ first for the workflow and standing rules.
    from Play). Next: owner device pass on both, then merge go.
    r642 done: d079947be + proofs 4b9545ad6 (pushed). Both branches feature-complete, pushed, unmerged:
    iOS 71d8c65cbe, Android 4b9545ad6. Waiting: owner device pass, Firebase promo text edit, version numbers.
+   Promo doc: url code=SPRING20 vs couponCode SMARTBIRD20 mismatch; offer running since 2023 (rolling 'limited time').
+0b. **Personal Lifetime** (owner spec `owner-specs/lifetime-purchase.md`, supersedes redesign §15 'no lifetime'):
+   iOS r649 / Android r643 on new `feature/lifetime` branched from `feature/subscription-redesign`; batch 29.
+   Placeholder IDs `com.sobremesa.SmartBirdID[.europe|.au|.in].pro.lifetime`, `com.smartbirdid.<na|eu|au>.pro.lifetime`
+   — owner creates them (iOS Family Sharing OFF). iOS identity risk: Plus uid = 'apple'+subscription originalTxnId;
+   Lifetime-only owners have none (agents report before changing).
 1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.

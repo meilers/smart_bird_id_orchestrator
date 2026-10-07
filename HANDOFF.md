@@ -22,10 +22,10 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r645 | **r646** |
-| Android request | r639 | **r640** |
+| iOS request | r646 | **r647** |
+| Android request | r640 | **r641** |
 | Cloud request | r616 (cancelled) | r617 |
-| Translation batch | 25 (+ 20b) | **26** |
+| Translation batch | 26 | **27** |
 
 ## Releases
 
@@ -74,13 +74,23 @@ first for the workflow and standing rules.
 
 ## Open items / decisions pending
 
-1. **Three older iOS glitches** (owner hasn't decided whether to fix): after saving a sighting the "Sharing is
+0. **Active (2026-10-07): subscription screen redesign + free backup/stickers** — owner spec
+   `owner-specs/subscription-screen-redesign.md` (+ two mockup .webp) in both app repos. Requests iOS r646 / Android
+   r640 (branch `feature/subscription-redesign`), batch 26. Free cloud backup PARKED by the owner (much larger
+   backup scope planned; gates untouched). Audit notes: free users lack a real Firebase identity, iOS `createUser`
+   `user.reset` can wipe local sightings, sync also writes `sharedSightings` when toShare. Android: no Family product, carousel retired, Restore/Redeem/Important Info added. Pending owner:
+   Android 1-sighting/24h free cap (`canSubmitIdentification`).
+1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.
 2. **Android splash A vs B** — owner to look on his Pixel. (Pixel left in Light mode by agents; owner may want Dark.)
-3. **Manual sightings and shared data** — offered, not answered: check whether manual sightings without media can
-   reach anything other users see (Nearby/community) or feed regional data/model training; if yes keep them private.
-   Monitor manual-without-media sightings per user after release (sticker-farming signal).
+3. **Manual sightings and shared data** — AUDITED 2026-10-07, **PARKED on the roadmap by the owner**. Findings:
+   no-media sightings of Pro users sync to `users/{uid}/sightings` and, if `toShare`, to public `sharedSightings`
+   (Feed/Nearby/map/profiles) and fire `sendBirdAlerts` (cloud `na/functions/index.js:613`, ignores `hideAddress`).
+   iOS defaults share OFF without media (`SubmitSightingViewController.swift:66-83`); Android defaults share ON for
+   Pro + regional bird regardless of media (`SubmitFragment.kt:894, 1290`). Android `SubmitActivity.kt:82-91` may
+   tag a manual add with a stale `IdResultManager` result. Firestore/Storage rules are not in any repo.
+   Proposed fix (not approved): no-media → private only on both; alerts only for media + skip `hideAddress`.
 4. **Android navigation modernisation** (Material 3 / Expressive: surface top bar edge-to-edge, flexible nav bar
    with labels) — proposed as its own round after this release; not started.
 5. **Next data release** (BirdMedia sync **hold** still on): three retrains, `labels_i18n` (now in BirdMedia,

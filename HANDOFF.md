@@ -99,6 +99,9 @@ first for the workflow and standing rules.
    Done: iOS r649 5bfc5a432a (feature/lifetime, unpushed); Android r643 b2b4c2c7c (pushed). Android identity = Google
    sign-in (portable, fine). Next: iOS r650 (owner state, sheet height, pending msg, identity fix — needs owner OK),
    Android r644 (owner state). Batch 30.
+   Done: iOS r650 38ff0ad0f1 (pushed; identity fix: stored ID never replaced, earliest sub > Lifetime, no user.reset
+   on existing User), Android r644 b2847419a (pushed). feature/lifetime contains the redesign. Waiting on owner:
+   create Lifetime products, device pass (incl. iOS sign-in on fresh install keeps same profile), release choice.
 1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.

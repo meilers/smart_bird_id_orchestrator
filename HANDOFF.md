@@ -22,10 +22,10 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r649 | **r650** |
-| Android request | r643 | **r644** |
+| iOS request | r650 | **r651** |
+| Android request | r644 | **r645** |
 | Cloud request | r616 (cancelled) | r617 |
-| Translation batch | 29 | **30** |
+| Translation batch | 30 | **31** |
 
 ## Releases
 
@@ -96,6 +96,9 @@ first for the workflow and standing rules.
    Placeholder IDs `com.sobremesa.SmartBirdID[.europe|.au|.in].pro.lifetime`, `com.smartbirdid.<na|eu|au>.pro.lifetime`
    — owner creates them (iOS Family Sharing OFF). iOS identity risk: Plus uid = 'apple'+subscription originalTxnId;
    Lifetime-only owners have none (agents report before changing).
+   Done: iOS r649 5bfc5a432a (feature/lifetime, unpushed); Android r643 b2b4c2c7c (pushed). Android identity = Google
+   sign-in (portable, fine). Next: iOS r650 (owner state, sheet height, pending msg, identity fix — needs owner OK),
+   Android r644 (owner state). Batch 30.
 1. **Three older iOS glitches** (PARKED on the roadmap by the owner 2026-10-07; strings purge #8 parked with it): after saving a sighting the "Sharing is
    caring" prompt opens with the share sheet on top (two dismissals); the saved card's photo doesn't fill it; the
    "Set as avatar" tip covers the sticker title on first open.

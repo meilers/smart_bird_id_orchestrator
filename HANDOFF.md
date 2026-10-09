@@ -22,9 +22,9 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r650 | **r651** |
-| Android request | r644 | **r645** |
-| Cloud request | r616 (cancelled) | r617 |
+| iOS request | r651 | **r652** |
+| Android request | r645 | **r646** |
+| Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
 | Translation batch | 30 | **31** |
 
 ## Releases
@@ -117,8 +117,12 @@ first for the workflow and standing rules.
    with labels) — proposed as its own round after this release; not started.
 5. **Next data release** (BirdMedia sync **hold** still on). 2026-10-08 BirdMedia notice f85bbe6f: voctype head
    retrained (143 sp / 432 types, 394 untested), 92 new samples; 48 new tokens translated by orchestrator
-   (`outbox/voctype-labels-i18n-48-2026-10-08.json`, 10 langs). All-clear DEFERRED until 5.1.5/3.8.2 are uploaded
-   (_perch/ is gitignored → a sync lands in any build). labels_i18n lacks cs/it/zh-Hans (iOS) — orchestrator owes 147×3.
+   (`outbox/voctype-labels-i18n-48-2026-10-08.json`, 10 langs). OWNER: SYNC NOW → ships in 5.1.5/3.8.2 (all-clear
+   given 2026-10-08). Also wrote cs/it/zh (key `zh`) for all 147 keys (`outbox/voctype-labels-i18n-cs-it-zh-147-…`).
+   2026-10-09 sync DONE (BirdMedia c1ee4932 labels, 2d2f1ce7 ref map; parity pass; G clear; 83 E = samples w/o
+   BirdCore rows; 6 `_1` naming mismatches pending BirdMedia/BirdCore). Data rounds: iOS r651, Android r645 (on
+   feature/lifetime). Syncs held again. OWNER: Cloud gets NO BirdCore/sample data — removed from
+   `sync_birdcore_db.sh` CLIENTS (all 3 copies, identical); Cloud working-tree copies to be discarded by the owner.
    Previously listed: three retrains, `labels_i18n` (now in BirdMedia,
    78ba49a5), plain example-media rows, translations for ~100 new voctype tokens; 107 NA birdie drawings differ
    between iOS and Android (owner's sticker batch — commit `Birdies_*.zip` when final).

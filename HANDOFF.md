@@ -115,7 +115,11 @@ first for the workflow and standing rules.
    Proposed fix (not approved): no-media → private only on both; alerts only for media + skip `hideAddress`.
 4. **Android navigation modernisation** (Material 3 / Expressive: surface top bar edge-to-edge, flexible nav bar
    with labels) — proposed as its own round after this release; not started.
-5. **Next data release** (BirdMedia sync **hold** still on): three retrains, `labels_i18n` (now in BirdMedia,
+5. **Next data release** (BirdMedia sync **hold** still on). 2026-10-08 BirdMedia notice f85bbe6f: voctype head
+   retrained (143 sp / 432 types, 394 untested), 92 new samples; 48 new tokens translated by orchestrator
+   (`outbox/voctype-labels-i18n-48-2026-10-08.json`, 10 langs). All-clear DEFERRED until 5.1.5/3.8.2 are uploaded
+   (_perch/ is gitignored → a sync lands in any build). labels_i18n lacks cs/it/zh-Hans (iOS) — orchestrator owes 147×3.
+   Previously listed: three retrains, `labels_i18n` (now in BirdMedia,
    78ba49a5), plain example-media rows, translations for ~100 new voctype tokens; 107 NA birdie drawings differ
    between iOS and Android (owner's sticker batch — commit `Birdies_*.zip` when final).
 6. **"How to identify birds"** screen — menu item exists behind a flag; design pending from the owner.

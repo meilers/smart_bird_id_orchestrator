@@ -22,8 +22,8 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r651 | **r652** |
-| Android request | r645 | **r646** |
+| iOS request | r652 | **r653** |
+| Android request | r646 | **r647** |
 | Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
 | Translation batch | 30 | **31** |
 
@@ -123,6 +123,21 @@ first for the workflow and standing rules.
    BirdCore rows; 6 `_1` naming mismatches pending BirdMedia/BirdCore). Data rounds: iOS r651, Android r645 (on
    feature/lifetime). Syncs held again. OWNER: Cloud gets NO BirdCore/sample data — removed from
    `sync_birdcore_db.sh` CLIENTS (all 3 copies, identical); Cloud working-tree copies to be discarded by the owner.
+   2026-10-09: BirdCore app build `dist/birdcore_app.sqlite` (5-table allowlist, 4.2 MB, sha c1a39f44, ≤50 MB cap);
+   sync script SRC switched (3 copies identical); orchestrator re-ran the sync → iOS/Android 4.2 MB DB.
+   NB the sync also overwrote Android agent's scratch worktrees wt645_new/wt645_old.
+   r645 DONE (Android dba4e6193: 4.2 MB DB + samples committed; voctype head ships in BASE, not the fast-follow pack —
+   always has; base +3.52 MB). r651 partial (iOS 1482ae767b: stale-marker fix rattles/tremolo/yodel in
+   PerchInferenceEngine, tests; _data/birdcore NOT committed — 710 MB at the time). Real shipped counts were 47 sp /
+   147 types. Gaps → BirdMedia note `outbox/to-birdmedia-2026-10-09-before-release.md`: 106 untranslated keys (orch
+   wrote 106×13), 83 unregistered samples (75–81 types w/o reference), 6 `_1` mismatches, sedwre1 glitch.
+   v1-head coverage gap 3→21 species (until v2 head downloads).
+   BirdCore 2026-10-09: 83 samples registered. `_1` rule agreed: canonical file = `<token>.m4a` (7 renames now:
+   herthr, mouchi, ruckin, swathr, wesmea, woothr, bruwat1); 5 older sets (amecro_caw, carwre_song, comrav_croak,
+   easspi1_piping_song, shshaw_kik_call) → NEXT data release. One final sync after BirdMedia renames + 106 translations +
+   sedwre1 fix and BirdCore rebuild (`outbox/to-birdmedia-birdcore-2026-10-09-rename-and-final-sync.md`).
+   FINAL SYNC DONE 2026-10-09: BirdMedia 32c894b4/f3740b86, perch stamp a756256e1, BirdCore app build e516add49500
+   (4.26 MB; 476 sound_types/156 sp); check_library E0 G0 H0 (253×13); only F spodov. Rounds: iOS r652, Android r646.
    Previously listed: three retrains, `labels_i18n` (now in BirdMedia,
    78ba49a5), plain example-media rows, translations for ~100 new voctype tokens; 107 NA birdie drawings differ
    between iOS and Android (owner's sticker batch — commit `Birdies_*.zip` when final).

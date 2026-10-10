@@ -22,8 +22,8 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r652 | **r653** |
-| Android request | r646 | **r647** |
+| iOS request | r654 | **r655** |
+| Android request | r649 | **r650** |
 | Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
 | Translation batch | 30 | **31** |
 
@@ -74,6 +74,35 @@ first for the workflow and standing rules.
 
 ## Open items / decisions pending
 
+000. **r654 DONE 2026-10-10:** main f5342fdb7e, tag ios-5.1.5-726 (Android refs removed ×65 strings; SIWA errors now
+   alert; onboarding 'Become a member' stuck after purchase fixed). Open: SIWA success needs real-device TestFlight test;
+   Lifetime buyers see share-subscription promo + 'Manage subscription' (recommend fix → 727); fr member.setup.account.body1
+   is a copy of the link text; CLOUD createToken mints tokens for any uid (security round recommended).
+000a. **2026-10-10 App Review on NA 5.1.5 (725):** G3 confirm Lifetime $199.99 (owner replies); 2.3.10 Android refs
+   in binary (share texts, member.*.account.body1, SoundIDQuizFlow 'iOS & Android'); 2.1(a) Sign in with Apple does
+   nothing (errors only print; suspect r650 identity path / Lifetime / iPad). iOS r654 = fixes + 5.1.5 (726) + merge
+   (tag ios-5.1.5-726); r653 superseded (agent stopped: 725 already uploaded NA; EU upload failed — Xcode credentials).
+   Android r649 DONE: main 66fee5585, tag android-3.8.2-359; SHIP_CHECKLIST gained PAD-on-internal-track step.
+000b. **MERGE ROUND (owner go 2026-10-09):** iOS r653 → 5.1.5 (725), tag ios-5.1.5-725; Android r649 → 3.8.2 (359),
+   tag android-3.8.2-359. Merges done in temp worktrees (owner's dirty files untouched). Release notes
+   `release-notes/ios-5.1.5.md` (15 blocks) + `android-3.8.2.md` (5). Still before store submission: owner device tests,
+   Android PAD delivery confirmed on internal track (AU test install got -2 PACK_UNAVAILABLE — Play-side), Lifetime
+   products (iOS AU created; others?), Play monthly trial 7 days, promo fixes (keep screen; fix code/price).
+
+00. **BUG (user Nick, 2026-10-09): Android 3.8.1 Plus journal not restored on new phone** (profile photos OK, journal
+   empty). Hypothesis: sightings watermark advanced at enqueue, not on success (JournalViewModel.syncIfNeeded,
+   HomeProfileViewModel TODO), anonymous/KEEP-dropped first run → history never fetched. r647: confirm, fix, one-time
+   recovery in 3.8.2, workaround, iOS parity check.
+   r647 DONE 0ca2e7b55: CONFIRMED — hits essentially every Plus user restoring on a new phone (anonymous first visit
+   spends the single app-wide watermark). Fix: per-uid watermark set on success from server time, full download when
+   empty, own work name, download after sign-in; one-time recovery `sb_journal_resync`. No safe 3.8.1 workaround →
+   user waits for 3.8.2. iOS unaffected. r648: auto-offer Google sign-in when Plus + anonymous (else recovery never runs).
+   r648 DONE 1fa89d126: SignInPrompt offers Google sign-in when Plus + anonymous (once per launch; MainActivity
+   updateUI, Journal/Profile resume). NOT device-tested (debug never has Plus) → owner test-track check. FOUND: sightings
+   added while anonymous upload to the anonymous account and never reach the real account (no owner per local
+   sighting) → PARKED with the owner's larger backup/identity project.
+   iOS r652 DONE b53cb655fc (data committed, pin regenerated, Release builds pass; real size ≈ +1 MB/edition).
+
 0. **Active (2026-10-07): subscription screen redesign + free backup/stickers** — owner spec
    `owner-specs/subscription-screen-redesign.md` (+ two mockup .webp) in both app repos. Requests iOS r646 / Android
    r640 (branch `feature/subscription-redesign`), batch 26. Free cloud backup PARKED by the owner (much larger
@@ -90,6 +119,8 @@ first for the workflow and standing rules.
    from Play). Next: owner device pass on both, then merge go.
    r642 done: d079947be + proofs 4b9545ad6 (pushed). Both branches feature-complete, pushed, unmerged:
    iOS 71d8c65cbe, Android 4b9545ad6. Waiting: owner device pass, Firebase promo text edit, version numbers.
+   Promo screen: owner considered removing; ASC data (offer codes = 10% of active subs, 54% of conversions to
+   standard; SPRING50 ~1.8K, SUMMER50 512) → recommendation KEEP + fix code/price, consider seasonal 50% code.
    Promo doc: url code=SPRING20 vs couponCode SMARTBIRD20 mismatch; offer running since 2023 (rolling 'limited time').
 0b. **Personal Lifetime** (owner spec `owner-specs/lifetime-purchase.md`, supersedes redesign §15 'no lifetime'):
    iOS r649 / Android r643 on new `feature/lifetime` branched from `feature/subscription-redesign`; batch 29.

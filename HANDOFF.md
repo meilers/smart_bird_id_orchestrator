@@ -22,8 +22,8 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r656 | **r657** |
-| Android request | r650 | **r651** |
+| iOS request | r657 | **r658** |
+| Android request | r651 | **r652** |
 | Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
 | Translation batch | 30 | **31** |
 
@@ -85,6 +85,11 @@ first for the workflow and standing rules.
    accept now; later app round reads example rows (restores + adds extras for all 12). Android committed 7934a6fa4;
    Owner chose ACCEPT (option 1). iOS r656 DONE f37b898927 (5.1.6/730 ready, unmerged); Android r650 DONE 703954707
    (3.8.3-data, still 3.8.2/359). NEXT (not started): app round to read BirdCore example rows (both apps).
+   MERGE ROUND (owner go 2026-10-13): iOS r657 → 5.1.6 (730), tag ios-5.1.6-730; Android r651 → 3.8.3 (360), tag
+   android-3.8.3-360. Release notes ios-5.1.6.md (15) / android-3.8.3.md (5).
+   DONE: iOS main 68c348c8ee + tag ios-5.1.6-730; Android main 8e364773c + tag android-3.8.3-360. Backlog: 3 iOS XCTests
+   (LifetimeTests D / regression) fail on a clean tree because committed Debug hasPro()=false — tests should not depend
+   on the Debug override.
 0000. **RELEASED 2026-10-13:** iOS 5.1.5 (729 NA/EU/AU, 728 IN; main + tags ios-5.1.5-729/-728) and Android 3.8.2 (359;
    main 66fee5585, tag android-3.8.2-359) submitted to the stores. Work from `main` next; feature branches kept.
 

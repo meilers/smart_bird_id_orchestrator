@@ -80,7 +80,7 @@ first for the workflow and standing rules.
 000. **r654 DONE 2026-10-10:** main f5342fdb7e, tag ios-5.1.5-726 (Android refs removed ×65 strings; SIWA errors now
    alert; onboarding 'Become a member' stuck after purchase fixed). Open: SIWA success needs real-device TestFlight test;
    Lifetime buyers see share-subscription promo + 'Manage subscription' (recommend fix → 727); fr member.setup.account.body1
-   is a copy of the link text; CLOUD createToken mints tokens for any uid (security round recommended).
+   is a copy of the link text; CLOUD createToken mints tokens for any uid — PARKED by the owner 2026-10-13 (security round later).
 000a. **2026-10-10 App Review on NA 5.1.5 (725):** G3 confirm Lifetime $199.99 (owner replies); 2.3.10 Android refs
    in binary (share texts, member.*.account.body1, SoundIDQuizFlow 'iOS & Android'); 2.1(a) Sign in with Apple does
    nothing (errors only print; suspect r650 identity path / Lifetime / iPad). iOS r654 = fixes + 5.1.5 (726) + merge

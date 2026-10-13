@@ -74,6 +74,9 @@ first for the workflow and standing rules.
 
 ## Open items / decisions pending
 
+0000. **RELEASED 2026-10-13:** iOS 5.1.5 (729 NA/EU/AU, 728 IN; main + tags ios-5.1.5-729/-728) and Android 3.8.2 (359;
+   main 66fee5585, tag android-3.8.2-359) submitted to the stores. Work from `main` next; feature branches kept.
+
 000. **r654 DONE 2026-10-10:** main f5342fdb7e, tag ios-5.1.5-726 (Android refs removed ×65 strings; SIWA errors now
    alert; onboarding 'Become a member' stuck after purchase fixed). Open: SIWA success needs real-device TestFlight test;
    Lifetime buyers see share-subscription promo + 'Manage subscription' (recommend fix → 727); fr member.setup.account.body1

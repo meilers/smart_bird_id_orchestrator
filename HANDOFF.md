@@ -22,8 +22,8 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r654 | **r655** |
-| Android request | r649 | **r650** |
+| iOS request | r656 | **r657** |
+| Android request | r650 | **r651** |
 | Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
 | Translation batch | 30 | **31** |
 
@@ -74,6 +74,16 @@ first for the workflow and standing rules.
 
 ## Open items / decisions pending
 
+0000a. 2026-10-13: Nick replied to (owner). Promo screen fixed in Firebase (owner). iOS r655 = 5.1.6 (730) Lifetime clean-up
+   (hide share-subscription promo + Manage subscription for Lifetime-only; fr/fr-CA setup text), branch
+   feature/5.1.6-lifetime-cleanup. Numbered-sets data round STARTED 2026-10-13 (`outbox/to-birdmedia-birdcore-2026-10-13-numbered-sets.md`):
+   DONE by BirdMedia/BirdCore (36bfe856/7d65fff9; app build 3b6ede1fc9b8; 12 types with >1 example; 8 extra takes
+   were already registered 10-09). r655 committed (f08ff7bdf0). Sync → iOS feature/5.1.6-lifetime-cleanup, Android
+   feature/3.8.3-data (owner creates). Verify rounds: iOS r656, Android r650. RESULT: resolution unchanged (0/11,681 classes); BirdCore committed the build as
+   6e8d1f7c (stamp label 78569b47 stale). REGRESSION: 5 types lost extra takes (carwre_song 4→1, amecro_caw/comrav_croak/
+   easspi1_piping_song/shshaw_kik_call 2→1) — apps read sound_types only, not media_assets example rows. Recommended:
+   accept now; later app round reads example rows (restores + adds extras for all 12). Android committed 7934a6fa4;
+   iOS r656 holding commit pending ruling. r655 done (f08ff7bdf0).
 0000. **RELEASED 2026-10-13:** iOS 5.1.5 (729 NA/EU/AU, 728 IN; main + tags ios-5.1.5-729/-728) and Android 3.8.2 (359;
    main 66fee5585, tag android-3.8.2-359) submitted to the stores. Work from `main` next; feature branches kept.
 

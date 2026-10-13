@@ -83,7 +83,8 @@ first for the workflow and standing rules.
    6e8d1f7c (stamp label 78569b47 stale). REGRESSION: 5 types lost extra takes (carwre_song 4→1, amecro_caw/comrav_croak/
    easspi1_piping_song/shshaw_kik_call 2→1) — apps read sound_types only, not media_assets example rows. Recommended:
    accept now; later app round reads example rows (restores + adds extras for all 12). Android committed 7934a6fa4;
-   iOS r656 holding commit pending ruling. r655 done (f08ff7bdf0).
+   Owner chose ACCEPT (option 1). iOS r656 DONE f37b898927 (5.1.6/730 ready, unmerged); Android r650 DONE 703954707
+   (3.8.3-data, still 3.8.2/359). NEXT (not started): app round to read BirdCore example rows (both apps).
 0000. **RELEASED 2026-10-13:** iOS 5.1.5 (729 NA/EU/AU, 728 IN; main + tags ios-5.1.5-729/-728) and Android 3.8.2 (359;
    main 66fee5585, tag android-3.8.2-359) submitted to the stores. Work from `main` next; feature branches kept.
 

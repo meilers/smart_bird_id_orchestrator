@@ -22,9 +22,9 @@ first for the workflow and standing rules.
 
 | Thing | Last used | Next |
 |---|---|---|
-| iOS request | r657 | **r658** |
-| Android request | r651 | **r652** |
-| Cloud request | r616 (cancelled); r617 drafted then withdrawn | r617 |
+| iOS request | r658 | **r659** |
+| Android request | r652 | **r653** |
+| Cloud request | r617 | **r618** |
 | Translation batch | 30 | **31** |
 
 ## Releases
@@ -73,6 +73,28 @@ first for the workflow and standing rules.
   Android carousel swipe fix (NestedScrollableHost).
 
 ## Open items / decisions pending
+
+00000. **PHOTO ID REBUILD (2026-10-14):** owner spec `owner-specs/photo-id-experience.md` (+ decisions, mockup text);
+   mockups https://claude.ai/artifact/9vf1SmYnKLqm578Hr43sLX. Decisions: multi-model only (retire legacy Gemini 2-call +
+   Android client OpenAI/`oai_api_key`), streaming species→form, on-device only offline, Add-while-checking fills form
+   on submit screen. Rounds: Cloud r617 (streaming events §19 + stage timing + payload review, branch
+   feature/photo-id-streaming); iOS r658 / Android r652 phase A (branch feature/photo-id-v2); phase B = streaming
+   transport + translations after r617. Owner still to say whether RC bird_photo_id_multi_model_enabled is on.
+   Later design decisions (in specs §7–11 and request UPDATEs 1–5): Add opens the existing full Add sighting screen;
+   sex/age under the name (results + Add screen; no sci name on Add screen); sharing default on for subscribers when the
+   bird is expected, off-but-allowed when out of range; wording "Share with the community" / "Appears in the Nearby
+   Birds feed"; Backyard auto-on at the saved yard; NO hide-location switch: shared posts always ~1 km + place name,
+   journal exact. Add screen = "2b refined+" (stepper, inline note, Save to Journal; area map TBD); NO Backyard
+   switch: automatic "My backyard" from saved yard; one card slot above Save (set backyard / free-user Plus upsell →
+   paywall `backyard_card` + line "Includes your automatic Backyard list." / tip), UPDATE 6. Open: sci name on result screens (recommended keep).
+   Also: confidence pill only when not high (UPDATE 7); tap behaviour table (8); why-we-think-so localized + form evidence
+   (9, Cloud r617 addendum); build light/dark × all sizes × portrait/landscape, ship per app-wide light+portrait (10).
+   BACKLOG: app-wide dark mode + landscape project (both apps locked today). BACKLOG: store Photo ID details
+   (method, certainty, field marks, form evidence) as sighting metadata + show "Identified with Photo ID" in journal.
+   Also decided: Save in toolbar, no bottom button (11); Notes never pre-filled, "What was it doing?" (12).
+   After-save flow rebuilt for ALL entry points (13): one saved screen, sticker inline, ≤1 prompt, iOS cooldown bug
+   fix, Android review-gating removed + double-save guard. Photo: original saved, bird-centred framing never upscaled (14).
+   CLOUD BACKLOG: one-time backfill rounding exact coords in existing sharedSightings (+ Storage metadata) to ~1 km.
 
 0000a. 2026-10-13: Nick replied to (owner). Promo screen fixed in Firebase (owner). iOS r655 = 5.1.6 (730) Lifetime clean-up
    (hide share-subscription promo + Manage subscription for Lifetime-only; fr/fr-CA setup text), branch
